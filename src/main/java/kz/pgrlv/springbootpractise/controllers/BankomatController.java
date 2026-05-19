@@ -21,7 +21,7 @@ public class BankomatController {
     ResponseEntity<?> deposit(@PathVariable Double sum, @RequestBody CardDto cardDto){
         boolean result = accountService.deposit(cardDto, sum);
         if (!result){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ошибка в данных");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ошибка в данных!");
         }
         return ResponseEntity.ok("Deposit has been replenished");
     }
@@ -30,7 +30,7 @@ public class BankomatController {
     ResponseEntity<?> withdraw(@PathVariable Double sum, @RequestBody CardDto cardDto){
         boolean result = accountService.withdraw(cardDto, sum);
         if (!result){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ошибка в данных");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ошибка в данных!");
         }
         return ResponseEntity.ok("Success withdraw");
     }
